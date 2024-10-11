@@ -1,0 +1,23 @@
+canvas {
+    border: 1px solid gray;
+}
+
+.bgToBlue {
+    background-color: lightblue;
+    font-size: 0.75em;
+    margin: -4px 2px 0px 0px;
+    padding: 10px;
+}
+
+.backtowhite {
+    background-color: white;
+    font-size: 0.75em;
+    margin: -4px 2px 0px 0px;
+    padding: 10px;
+}
+
+#PaintModeNode, #EraseModeNode {
+    font-size: 0.75em;
+    margin: -4px 2px 0px 0px;
+    padding: 10px;
+}

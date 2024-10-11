@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Own Picture</title>
+    <link rel="stylesheet" href="main.css"/>
+</head>
+
+<body>
+
+    <h1>
+        Paint Your Own Picture
+    </h1>
+
+    <P>
+        Set Width
+        <input type="text" placeholder="" onchange="setWidth(this.value)"/>
+        Set Height
+        <input type="text" placeholder="" onchange="setHeight(this.value)"/>
+    </P>
+
+    <p>
+        <canvas id="canvas1" onmousedown="startPaint(); startErase(); doPaint(event.offsetX, event.offsetY); erase(event.offsetX, event.offsetY)" onmousemove="doPaint(event.offsetX, event.offsetY); erase(event.offsetX, event.offsetY)" onmouseup="endPaint(); endErase()">
+    </p>
+    Mode:
+    <p>
+        <input id="PaintModeNode" type="button" class="backtowhite" value="Paint" onclick="paintMode()"/>
+        Brush Color:
+        <input type="color" id="clr" value="#000" onchange="changeColor(this.value)"/>
+    </p>
+    <p>
+        <input id="EraseModeNode" type="button" class="backtowhite" value="Erase" onclick="eraseMode()"/>
+    </p>
+
+    <p>
+        Brush Size:
+        <input type="range" id="sizeInput" min="1" max="50" value="50" oninput="resizeBrush(this.value)"/>
+        <output id="sizeOutput">50</output>
+    </p>
+
+    <p>
+        <input type="button" id="clear" value="Clear Canvas" onclick="clearCanvas()"/>
+    </p>
+
+
+    <script src="main.js"></script>
+</body>
+</html>
