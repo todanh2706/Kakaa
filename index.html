@@ -8,7 +8,7 @@
 </head>
 
 <body>
-
+    <script src="https://www.dukelearntoprogram.com/course1/common/js/image/SimpleImage.js"></script>
     <h1>
         Paint Your Own Picture
     </h1>
@@ -23,6 +23,12 @@
     <p>
         <canvas id="canvas1" onmousedown="startPaint(); startErase(); doPaint(event.offsetX, event.offsetY); erase(event.offsetX, event.offsetY)" onmousemove="doPaint(event.offsetX, event.offsetY); erase(event.offsetX, event.offsetY)" onmouseup="endPaint(); endErase()">
     </p>
+
+    <p>
+        <input type="file" multiple="false" accept="image/*" id="finput" onchange="upload()" />
+    </p>
+
+    <!--***************************** Change Mode *****************************-->
     Mode:
     <p>
         <input id="PaintModeNode" type="button" class="backtowhite" value="Paint" onclick="paintMode()"/>
@@ -42,7 +48,6 @@
     <p>
         <input type="button" id="clear" value="Clear Canvas" onclick="clearCanvas()"/>
     </p>
-
 
     <script src="main.js"></script>
 </body>

@@ -115,3 +115,11 @@ function eraseMode() {
         erase_Mode = 0;
     }
 }
+
+function upload()
+{
+    var dd1 = document.getElementById("canvas1");
+    var fileinput = document.getElementById("finput");
+    var image = new SimpleImage(fileinput);
+    image.drawTo(dd1);
+}
