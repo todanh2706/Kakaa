@@ -116,10 +116,33 @@ function eraseMode() {
     }
 }
 
+var img;
+
 function upload()
 {
     var dd1 = document.getElementById("canvas1");
     var fileinput = document.getElementById("finput");
-    var image = new SimpleImage(fileinput);
-    image.drawTo(dd1);
+    img = new SimpleImage(fileinput);
+    img.drawTo(dd1);
+}
+
+function makeGray()
+{
+    var avg;
+    for (var pixel of img.values())
+    {
+        avg = (pixel.getRed() + pixel.getGreen() + pixel.getBlue()) / 3;
+        pixel.setRed(avg);
+        pixel.setGreen(avg);
+        pixel.setBlue(avg);
+    }
+    var dd1 = document.getElementById("canvas1");
+    img.drawTo(dd1);
+}
+
+function deleteImg()
+{
+    var fileinput = document.getElementById("finput");
+    clearCanvas();
+    fileinput.value = '';
 }
